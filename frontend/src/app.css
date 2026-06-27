@@ -52,6 +52,13 @@ html, body {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 #app {
@@ -73,7 +80,7 @@ button {
   border: none;
   outline: none;
   font-family: inherit;
-  border-radius: 9999px !important;
+  border-radius: 9999px;
 }
 
 input, textarea {
