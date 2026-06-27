@@ -1,5 +1,6 @@
 <script lang="ts">
   import { notify } from '$store/notificationStore.svelte';
+  import { navigate } from '$lib/router.svelte';
 
   let connected = $state(false);
   let fullAddress = $state('0x742d35Cc6634C0532925a3b844Bc9e7595f3bDc9');
@@ -61,6 +62,7 @@
           <span class="popup-balance-label">Balance</span>
           <span class="popup-balance-value mono">{balance.toFixed(4)} MON</span>
         </div>
+        <button class="popup-nav" onclick={() => { showPopup = false; navigate('/portfolio'); }}>Portfolio</button>
         <button class="popup-logout" onclick={handleDisconnect}>Disconnect</button>
       </div>
     {/if}
@@ -202,5 +204,20 @@
   }
   .popup-logout:hover {
     background: rgba(239, 68, 68, 0.1);
+  }
+
+  .popup-nav {
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background 0.15s;
+    width: 100%;
+    text-align: left;
+  }
+  .popup-nav:hover {
+    background: var(--gray-700);
   }
 </style>

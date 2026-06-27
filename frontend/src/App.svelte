@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import Navbar from '$components/shared/Navbar.svelte';
   import Notification from '$components/shared/Notification.svelte';
   import { initRouter, getRoute, navigate } from '$lib/router.svelte';
@@ -12,6 +12,30 @@
   import Portfolio from './pages/Portfolio.svelte';
 
   let route = $state(getRoute());
+  let reentryTimer: ReturnType<typeof setTimeout> | undefined = $state();
+
+  function enterFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    }
+  }
+
+  function handleFullscreenChange() {
+    if (!document.fullscreenElement) {
+      reentryTimer = setTimeout(enterFullscreen, 3000);
+    } else {
+      if (reentryTimer) {
+        clearTimeout(reentryTimer);
+        reentryTimer = undefined;
+      }
+    }
+  }
+
+  function handleFirstInteraction() {
+    enterFullscreen();
+    document.removeEventListener('click', handleFirstInteraction);
+    document.removeEventListener('touchstart', handleFirstInteraction);
+  }
 
   onMount(() => {
     initRouter();
@@ -19,6 +43,16 @@
     window.addEventListener('hashchange', () => {
       route = getRoute();
     });
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('click', handleFirstInteraction);
+    document.addEventListener('touchstart', handleFirstInteraction);
+  });
+
+  onDestroy(() => {
+    document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    document.removeEventListener('click', handleFirstInteraction);
+    document.removeEventListener('touchstart', handleFirstInteraction);
+    if (reentryTimer) clearTimeout(reentryTimer);
   });
 </script>
 
