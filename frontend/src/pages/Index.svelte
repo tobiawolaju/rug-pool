@@ -205,7 +205,7 @@
   <div class="page-header">
     <div>
       <h1>Memes on Monad</h1>
-      <p class="subtitle">The rug is scheduled. The dev is locked in too.</p>
+      <p class="subtitle">Rugs, pumps, holds, dumps — all scheduled.</p>
     </div>
   </div>
 
