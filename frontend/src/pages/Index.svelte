@@ -204,8 +204,8 @@
 
   <div class="page-header">
     <div>
-      <h1>Memes on Monad</h1>
       <p class="subtitle">Rugs, pumps, holds, dumps — all scheduled.</p>
+      <h1>Buy and pray. <span class="emoji-white">🧎</span></h1>
     </div>
   </div>
 
@@ -237,6 +237,10 @@
   .subtitle {
     color: var(--text-secondary);
     font-size: 0.9375rem;
+  }
+
+  .emoji-white {
+    filter: brightness(0) saturate(100%) invert(1);
   }
 
   .stats-bar {
