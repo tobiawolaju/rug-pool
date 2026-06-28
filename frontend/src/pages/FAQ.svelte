@@ -13,7 +13,7 @@
   <div class="list">
     <details class="item">
       <summary class="question">What is Rug Pool?</summary>
-      <p class="answer">Rug Pool is a provably fair memecoin game on Monad. You buy into a coin, get locked for 24 hours, and at T+24 onchain randomness decides if you auto-sell or stay locked another cycle. The rug is guaranteed. The question is whether it hits you.</p>
+      <p class="answer">Rug Pool is a memecoin launchpad on Monad where no one can sell early — not even the dev. Onchain randomness decides who exits at 24 hours per cycle. Losers fund the winners. The worst loser of the month wins a prize.</p>
     </details>
 
     <details class="item">
@@ -48,12 +48,12 @@
 
     <details class="item">
       <summary class="question">Wait — the worst loser wins a prize?</summary>
-      <p class="answer">Exactly. 10% of monthly protocol fees go to the wallet that lost the most that month. Losing big is a legitimate strategy. The worst outcome becomes a competition.</p>
+      <p class="answer">Exactly. At the end of each month, one single wallet across the entire protocol — the wallet that lost the most across all coins and all cycles — wins 10% of all protocol fees accumulated that month. The worse you lose, the bigger your shot at the prize. The worst outcome becomes a competition.</p>
     </details>
 
     <details class="item">
       <summary class="question">What is the protocol pool?</summary>
-      <p class="answer">20% of every auto-sell exit value stays in the protocol treasury. This accumulates across all coins and all cycles. At the end of each month it splits two ways — 10% to the dev, 10% to the top loser. It does not pay out per exit. It pays out monthly.</p>
+      <p class="answer">20% of every auto-sell exit value stays in the protocol treasury. This accumulates across all coins and all cycles. At the end of each month it splits two ways — 10% to the dev, 10% to one single top loser across the entire protocol. Not per coin. One winner. One prize. It pays out monthly.</p>
     </details>
 
     <details class="item">
@@ -78,7 +78,7 @@
 
     <details class="item">
       <summary class="question">What happens if I flip Tails every single cycle?</summary>
-      <p class="answer">You stay locked. Every cycle. Until you flip Heads. There is no manual exit. That's the point. You knew this when you bought in.</p>
+      <p class="answer">Every time you flip Tails your full current position value is sacrificed to the pool to fund the winners exiting that cycle. Your tokens remain but their value drops to near zero. New buyers entering the next cycle are your only way back. There is no manual exit. Shill or bleed. 💀</p>
     </details>
 
     <details class="item">

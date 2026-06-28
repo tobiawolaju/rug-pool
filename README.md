@@ -7,12 +7,12 @@
 
 ## What is Rug Pool?
 
-Rug Pool is a memecoin launch and trading game built on Monad. Every coin launched on the platform locks all holders for 24 hours — no early exits, no whale dumps, no insider sells. At the 24-hour mark, Monad's onchain verifiable random function (VRF) flips a coin for every single holder simultaneously.
+Rug Pool is a memecoin launchpad on Monad where no one can sell early — not even the dev. Onchain randomness decides who exits at 24 hours per cycle. Losers fund the winners. The worst loser of the month wins a prize.
 
 - **Heads** — your position auto-sells at current market value
 - **Tails** — you stay locked for another cycle
 
-Every coin has one global countdown timer. When it hits zero, every holder flips at the same time — no exceptions. Buy early or buy late, the flip hits everyone simultaneously. That shared moment is the game.
+Every coin has one global countdown timer. When it hits zero, every holder flips at the same time — no exceptions. Buy early or buy late, the flip hits everyone simultaneously. That shared moment is what makes Rug Pool different from every other launchpad.
 
 You never know which side you're on until it happens. Nobody does. Not even the dev.
 
@@ -28,7 +28,7 @@ Rug Pool removes this entirely. The 24-hour lock applies to everyone equally —
 ### 2. Losing in crypto has no upside
 You hold. You get rugged. You leave with nothing but a loss and a lesson. There is no mechanism in any existing memecoin platform that rewards the downside.
 
-Rug Pool flips this. 10% of monthly protocol fees go directly to the top loser — the wallet that lost the most that month walks away with a prize. Losing big is a legitimate strategy. The worst outcome becomes a competition.
+Rug Pool flips this. At the end of each month, one single wallet across the entire protocol — the wallet with the largest verified loss across all coins and all cycles — wins 10% of all protocol fees accumulated that month. Losing big is a legitimate strategy. The worst outcome becomes a competition.
 
 ### 3. Bots and sybils destroy fair launches
 Free-to-join platforms are immediately flooded with bots, sybil wallets, and fake volume. This distorts price discovery and kills the experience for real users.
@@ -49,9 +49,10 @@ Rug Pool is built from the ground up on Monad, for the Monad meme community.
 2. Launch or buy into a coin → locked until the coin's next global flip
 3. At T+24 → onchain VRF flips for every holder simultaneously
 4. Heads → auto-sell at current market value (80% to holder, 20% to protocol)
-5. Tails → locked for another 24-hour cycle
+5. Tails → full current position value sacrificed to pool, tokens remain as ghost position, locked another cycle
+5b. Ghost positions recover naturally as new buyers enter the next cycle via bonding curve
 6. Protocol treasury accumulates across all coins and all cycles
-7. Monthly: 10% of treasury → dev, 10% → top loser prize
+7. Monthly: 10% of treasury → dev, 10% → single protocol-wide top loser
 8. Re-enter anytime → you join the current cycle and flip at the next global T+24
 ```
 
@@ -62,7 +63,7 @@ Rug Pool is built from the ground up on Monad, for the Monad meme community.
 | Flow | Allocation |
 |------|-----------|
 | Auto-sell exit value | 80% to holder, 20% to protocol treasury |
-| Protocol treasury (monthly) | 10% dev wallet, 10% top loser prize |
+| Protocol treasury (monthly) | 10% dev wallet, 10% to single protocol-wide top loser (one winner per month) prize |
 | Founding member fee | $1 per user, non-refundable, one-time |
 | Verified project badge | $10 per coin launch, priority feed placement |
 
