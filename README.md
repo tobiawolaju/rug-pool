@@ -1,5 +1,5 @@
 # Rug Pool 🟣
-### A Provably Fair Memecoin Game on Monad
+### A Provably Fair Memecoin Launchpad on Monad
 
 > *The rug is guaranteed. The question is whether it hits you.*
 
@@ -35,8 +35,8 @@ Free-to-join platforms are immediately flooded with bots, sybil wallets, and fak
 
 Rug Pool requires a one-time $1 non-refundable founding member fee to access the platform. This is not a revenue mechanism — it is proof of human. No bot farm can economically justify mass registration at $1 per wallet. Real players only.
 
-### 4. Monad's meme community has no native game
-Monad has 10,000 TPS and 0.8s finality — performance that makes real-time game economies possible onchain. No existing memecoin platform is built specifically to take advantage of this or serve the Monad community natively.
+### 4. Monad's meme community has no provably fair launchpad
+Monad has 10,000 TPS and 0.8s finality — performance that makes real-time onchain mechanics possible at scale. Existing launchpads on Monad don't lock the dev, don't use VRF for exits, and don't reward losers. Rug Pool is the first launchpad on Monad where the rules apply to everyone equally and are enforced entirely by code.
 
 Rug Pool is built from the ground up on Monad, for the Monad meme community.
 

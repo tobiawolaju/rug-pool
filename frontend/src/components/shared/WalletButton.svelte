@@ -130,8 +130,8 @@
     top: calc(100% + 6px);
     right: 0;
     min-width: 240px;
-    background: var(--gray-800);
-    border: 1px solid var(--gray-600);
+    background: var(--accent);
+    border: 1px solid var(--accent-hover);
     border-radius: 10px;
     padding: 0.5rem;
     z-index: 300;
@@ -147,10 +147,10 @@
     gap: 0.5rem;
     width: 100%;
     font-size: 0.8125rem;
-    color: var(--text-primary);
+    color: black;
     word-break: break-all;
     padding: 0.5rem;
-    background: var(--bg-primary);
+    background: rgba(0,0,0,0.1);
     border-radius: 6px;
     border: none;
     cursor: pointer;
@@ -158,12 +158,12 @@
     transition: background 0.15s;
   }
   .popup-address:hover {
-    background: var(--gray-700);
+    background: rgba(0,0,0,0.15);
   }
 
   .copy-icon {
     flex-shrink: 0;
-    color: var(--text-secondary);
+    color: black;
   }
 
   .popup-balance {
@@ -175,18 +175,19 @@
 
   .popup-balance-label {
     font-size: 0.8125rem;
-    color: var(--text-secondary);
+    color: black;
+    opacity: 0.7;
   }
 
   .popup-balance-value {
     font-size: 0.875rem;
-    color: var(--text-primary);
+    color: black;
     font-weight: 600;
   }
 
   .popup-logout {
     background: transparent;
-    color: var(--danger);
+    color: black;
     font-size: 0.875rem;
     font-weight: 600;
     padding: 0.5rem;
@@ -196,12 +197,12 @@
     text-align: center;
   }
   .popup-logout:hover {
-    background: rgba(239, 68, 68, 0.1);
+    background: rgba(0,0,0,0.1);
   }
 
   .popup-nav {
     background: transparent;
-    color: var(--text-primary);
+    color: black;
     font-size: 0.875rem;
     font-weight: 600;
     padding: 0.5rem;
@@ -211,7 +212,7 @@
     text-align: left;
   }
   .popup-nav:hover {
-    background: var(--gray-700);
+    background: rgba(0,0,0,0.1);
   }
 
   .lnk {

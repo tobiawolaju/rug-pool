@@ -4,7 +4,6 @@
   import CycleTracker from '$components/coin/CycleTracker.svelte';
   import BuyPanel from '$components/coin/BuyPanel.svelte';
   import HolderList from '$components/coin/HolderList.svelte';
-  import CoinChat from '$components/coin/CoinChat.svelte';
   import CountdownTimer from '$components/shared/CountdownTimer.svelte';
   import Badge from '$components/shared/Badge.svelte';
 
@@ -47,13 +46,6 @@
     { address: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045', amount: 4100, value: 17220 },
     { address: '0x71C7656EC7ab88b098defB751B7401B5f6d8976F', amount: 2800, value: 11760 },
     { address: '0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B', amount: 1900, value: 7980 },
-  ];
-
-  const MOCK_CHAT = [
-    { id: '1', sender: '0x742d...3bDc9', text: 'Let\'s go MPEPE 🚀', timestamp: Date.now() - 300000 },
-    { id: '2', sender: '0x8f3C...A063', text: 'when flip', timestamp: Date.now() - 240000 },
-    { id: '3', sender: '0x1CBd...3C9Ec', text: 'holding strong', timestamp: Date.now() - 120000 },
-    { id: '4', sender: '0xd8dA...6045', text: 'next round gonna be huge', timestamp: Date.now() - 60000 },
   ];
 
   let priceStr = $derived('$' + MOCK_COIN.price.toFixed(6));
@@ -121,8 +113,9 @@
           flipsPending={MOCK_COIN.flipsPending}
         />
       </div>
-      <div class="chat-section">
-        <CoinChat coinId={MOCK_COIN.id} messages={MOCK_CHAT} />
+      <div class="tweet-actions">
+        <a href="https://x.com/search?q=%24{MOCK_COIN.symbol}" target="_blank" rel="noopener noreferrer" class="tweet-btn secondary">Pump ${MOCK_COIN.symbol} on X</a>
+        <a href="https://x.com/intent/tweet?text=just+bought+%24{MOCK_COIN.symbol}+on+%40rugpool%2C+locked+for+24hrs%2C+pray+for+me+%F0%9F%92%80+rug-pool.vercel.app" target="_blank" rel="noopener noreferrer" class="tweet-btn primary">Shill ${MOCK_COIN.symbol} 🐦</a>
       </div>
     </div>
     <div class="right-col">
@@ -308,8 +301,37 @@
   .tracker-section {
   }
 
-  .chat-section {
-    min-height: 300px;
+  .tweet-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .tweet-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .tweet-btn.primary {
+    background: var(--accent);
+    color: white;
+  }
+  .tweet-btn.primary:hover {
+    background: var(--accent-hover);
+  }
+
+  .tweet-btn.secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--gray-600);
+  }
+  .tweet-btn.secondary:hover {
+    border-color: var(--gray-500);
   }
 
   .right-col {

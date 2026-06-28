@@ -43,7 +43,7 @@
 
 <details class="item">
   <summary class="question">Can I get rugged?</summary>
-  <p class="answer">Yes. If you survive multiple cycles while the price bleeds and finally flip heads at the bottom, you exit at a loss. The protocol takes its 20% and you walk away with 80% of a position worth less than you put in. That's the risk. That's the game.</p>
+  <p class="answer">Can I get rugged?" still ends with "That's the game." Replace with "That's the risk. That's Rug Pool."</p>
 </details>
 
     <details class="item">
@@ -93,7 +93,7 @@
 
     <details class="item">
       <summary class="question">Is this gambling?</summary>
-      <p class="answer">It's a game with real money and real risk. Like every memecoin. The difference is the rules are written in code, visible to everyone, and enforced automatically. Nobody can change them mid-game.</p>
+      <p class="answer">It's a launchpad with real money and real risk. The difference is the rules are written in code, visible to everyone, and enforced automatically. Nobody can change them mid-cycle.</p>
     </details>
 
     <details class="item">
