@@ -21,15 +21,30 @@
       <p class="answer">No. A normal rug pull is secret. Someone plans it, executes it, and disappears with your money. Rug Pool is the opposite — the rug is public, scheduled, equal for everyone, and provably fair. Even the dev can't sell early.</p>
     </details>
 
+   <details class="item">
+  <summary class="question">How does the flip work?</summary>
+  <p class="answer">At exactly 24 hours, Monad's onchain VRF flips a coin for every holder simultaneously. Heads means your position auto-sells at current market value — 80% goes to you, 20% goes to the protocol treasury. Tails means you stay locked for another 24 hour cycle. Nobody knows which side they're on until it happens. Not even us.</p>
+</details>
+
     <details class="item">
-      <summary class="question">How does the flip work?</summary>
-      <p class="answer">At exactly 24 hours, Monad's onchain VRF flips a coin for every holder simultaneously. Heads means your position auto-sells at market price plus a cut of the protocol pool. Tails means you stay locked for another 24 hour cycle. Nobody knows which side they're on until it happens. Not even us.</p>
+      <summary class="question">What is a cycle?</summary>
+      <p class="answer">A cycle is one 24-hour lock period. Every coin starts at Cycle 1. When the global flip happens, Tails holders immediately enter Cycle 2 — another 24 hours starts for everyone simultaneously. A coin can run infinite cycles. The cycle number on each coin card shows how many flips it has survived.</p>
     </details>
 
     <details class="item">
-      <summary class="question">Can I get rugged?</summary>
-      <p class="answer">Yes. If you survive multiple cycles while the price bleeds and finally flip heads at the bottom, the pool bonus might not cover your loss. That's the risk. That's the game.</p>
+      <summary class="question">When does the global flip happen?</summary>
+      <p class="answer">Every coin has one global countdown timer. When it hits zero, every holder flips simultaneously — no exceptions. Buy early, buy late, it doesn't matter. The flip hits everyone at the same time. That's what makes it fair and what makes the chat go crazy when it happens.</p>
     </details>
+
+    <details class="item">
+      <summary class="question">What if I buy right before the flip?</summary>
+      <p class="answer">You flip with everyone else. If you bought 5 minutes ago or 23 hours ago — same flip, same timer. Early buyers and late buyers are equal at T+24. This is intentional. There is no advantage to timing your entry within a cycle.</p>
+    </details>
+
+<details class="item">
+  <summary class="question">Can I get rugged?</summary>
+  <p class="answer">Yes. If you survive multiple cycles while the price bleeds and finally flip heads at the bottom, you exit at a loss. The protocol takes its 20% and you walk away with 80% of a position worth less than you put in. That's the risk. That's the game.</p>
+</details>
 
     <details class="item">
       <summary class="question">Wait — the worst loser wins a prize?</summary>
@@ -37,8 +52,8 @@
     </details>
 
     <details class="item">
-      <summary class="question">What is the pool bonus?</summary>
-      <p class="answer">20% of every auto-sell profit stays in the protocol. When you flip heads and exit, you receive your market price plus a share of the accumulated pool. The pool can offset losses but doesn't guarantee profit — especially in later cycles on a declining coin.</p>
+      <summary class="question">What is the protocol pool?</summary>
+      <p class="answer">20% of every auto-sell exit value stays in the protocol treasury. This accumulates across all coins and all cycles. At the end of each month it splits two ways — 10% to the dev, 10% to the top loser. It does not pay out per exit. It pays out monthly.</p>
     </details>
 
     <details class="item">
@@ -48,7 +63,7 @@
 
     <details class="item">
       <summary class="question">What does the blue checkmark mean?</summary>
-      <p class="answer">The wallet that launched this coin paid the $1 founding member fee. They're a verified human, not a bot deploy.</p>
+      <p class="answer">This user paid the $1 founding member fee. Verified human, not a bot.</p>
     </details>
 
     <details class="item">
@@ -58,7 +73,7 @@
 
     <details class="item">
       <summary class="question">Can I buy back in after being auto-sold?</summary>
-      <p class="answer">Yes. Any time. Buying back in starts a fresh 24 hour lock from the moment of purchase. You're back in the game.</p>
+      <p class="answer">Yes. Any time. But your lock is tied to the coin's global timer, not your purchase time. If you buy 4 hours before the next flip, you only have 4 hours before you flip. If you buy 1 minute before the flip, you flip in 1 minute. Plan accordingly.</p>
     </details>
 
     <details class="item">
