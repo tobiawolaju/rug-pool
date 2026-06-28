@@ -223,9 +223,22 @@
         class="launch-btn"
         disabled={!isFormValid || isLaunching}
       >
-        {isLaunching
-          ? 'Launching...'
-          : `Pay $${badgeVariant === 'project' ? '10' : '1'} + gas and Launch`}
+        {#if !isLaunching}
+          <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" />
+            <line x1="12" y1="2" x2="12" y2="7" />
+            <line x1="12" y1="17" x2="12" y2="22" />
+            <line x1="2" y1="12" x2="7" y2="12" />
+            <line x1="17" y1="12" x2="22" y2="12" />
+            <line x1="4.93" y1="4.93" x2="8.46" y2="8.46" />
+            <line x1="15.54" y1="15.54" x2="19.07" y2="19.07" />
+            <line x1="4.93" y1="19.07" x2="8.46" y2="15.54" />
+            <line x1="15.54" y1="8.46" x2="19.07" y2="4.93" />
+          </svg>
+        {/if}
+        {isLaunching ? 'Launching...' : `Pay $${badgeVariant === 'project' ? '10' : '1'} + gas and Launch`}
       </button>
     </section>
   </form>
@@ -538,6 +551,16 @@
     font-weight: 600;
     transition: background 0.15s;
     margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .chip-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
   }
   .launch-btn:hover:not(:disabled) {
     background: var(--accent-hover);

@@ -114,8 +114,8 @@
         />
       </div>
       <div class="tweet-actions">
-        <a href="https://x.com/search?q=%24{MOCK_COIN.symbol}" target="_blank" rel="noopener noreferrer" class="tweet-btn secondary">Pump ${MOCK_COIN.symbol} on X</a>
-        <a href="https://x.com/intent/tweet?text=just+bought+%24{MOCK_COIN.symbol}+on+%40rugpool%2C+locked+for+24hrs%2C+pray+for+me+%F0%9F%92%80+rug-pool.vercel.app" target="_blank" rel="noopener noreferrer" class="tweet-btn primary">Shill ${MOCK_COIN.symbol} 🐦</a>
+        <a href="https://x.com/search?q=%24{MOCK_COIN.symbol}" target="_blank" rel="noopener noreferrer" class="tweet-btn secondary">Pump ${MOCK_COIN.symbol} on 𝕏</a>
+        <a href="https://x.com/intent/tweet?text=just+bought+%24{MOCK_COIN.symbol}+on+%40rugpool%2C+locked+for+24hrs%2C+pray+for+me+%F0%9F%92%80+rug-pool.vercel.app" target="_blank" rel="noopener noreferrer" class="tweet-btn primary">Shill ${MOCK_COIN.symbol} 𝕏</a>
       </div>
     </div>
     <div class="right-col">

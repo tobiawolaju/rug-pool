@@ -13,9 +13,10 @@
 
   function handleScroll() {
     const y = window.scrollY;
-    if (y > 60 && y > lastScrollY) {
+    const delta = y - lastScrollY;
+    if (delta > 0 && y > 60) {
       hidden = true;
-    } else if (y < lastScrollY) {
+    } else if (delta < 0) {
       hidden = false;
     }
     lastScrollY = y;
@@ -93,10 +94,12 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    transition: transform 0.3s ease;
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   nav.hidden {
     transform: translateY(-100%);
+    margin-bottom: -56px;
   }
 
   .nav-inner {

@@ -45,121 +45,40 @@
     activeTooltip = null;
   }
 
-  const MOCK_COINS = [
-    {
-      id: 'monad-pepe',
-      name: 'Monad Pepe',
-      symbol: 'MPEPE',
-      price: 0.000042,
-      priceChange24h: 12.5,
-      holders: 342,
-      poolSize: 128500,
-      cycleEnd: Date.now() + 3600000 * 3 + 1200000,
-      round: 2,
-      image: 'https://placehold.co/40/7c3aed/ffffff?text=P',
-      description: 'The dankest pepe on Monad. Absolute unit.',
-      maxSupply: 1000000000,
-      initialPrice: 0.000042,
-      initialLiquidity: 50000,
-      twitter: 'https://x.com/monadpepe',
-      website: 'https://monadpepe.mon',
-    },
-    {
-      id: 'rug-doge',
-      name: 'Rug Doge',
-      symbol: 'RDOGE',
-      price: 0.000128,
-      priceChange24h: -8.3,
-      holders: 189,
-      poolSize: 94200,
-      cycleEnd: Date.now() + 3600000 * 22 + 300000,
-      round: 1,
-      description: 'Much wow. Very rug. Such doge.',
-      maxSupply: 500000000,
-      initialPrice: 0.000128,
-      initialLiquidity: 25000,
-      twitter: 'https://x.com/rugdoge',
-      telegram: 'https://t.me/rugdoge',
-    },
-    {
-      id: 'monad-cat',
-      name: 'Monad Cat',
-      symbol: 'MCAT',
-      price: 0.000005,
-      priceChange24h: 45.2,
-      holders: 521,
-      poolSize: 215000,
-      cycleEnd: Date.now() + 1800000,
-      round: 3,
-      isFoundingMember: true,
-      description: 'Cat coin on Monad. Meow.',
-      maxSupply: 10000000000,
-      initialPrice: 0.000005,
-      initialLiquidity: 10000,
-      telegram: 'https://t.me/monadcat',
-    },
-    {
-      id: 'pog-coin',
-      name: 'Pog Coin',
-      symbol: 'POG',
-      price: 0.000009,
-      priceChange24h: -2.1,
-      holders: 76,
-      poolSize: 32100,
-      cycleEnd: Date.now() + 3600000 * 8 + 450000,
-      round: 4,
-      isFoundingProject: true,
-      description: 'Poggers only. Certified banger.',
-      maxSupply: 2000000000,
-      initialPrice: 0.000009,
-      initialLiquidity: 15000,
-      twitter: 'https://x.com/pogcoin',
-      website: 'https://pogcoin.xyz',
-    },
-    {
-      id: 'wagmi-token',
-      name: 'WAGMI Token',
-      symbol: 'WAGMI',
-      price: 0.000321,
-      priceChange24h: 3.7,
-      holders: 1054,
-      poolSize: 567000,
-      cycleEnd: Date.now() + 3600000 * 5 + 600000,
-      round: 2,
-      isFoundingMember: true,
-      description: 'We are all gonna make it.',
-      maxSupply: 500000000,
-      initialPrice: 0.000321,
-      initialLiquidity: 100000,
-      twitter: 'https://x.com/wagmitoken',
-      telegram: 'https://t.me/wagmitoken',
-      website: 'https://wagmi.mon',
-    },
-    {
-      id: 'based-mon',
-      name: 'Based Mon',
-      symbol: 'BMON',
-      price: 0.000067,
-      priceChange24h: -15.8,
-      holders: 215,
-      poolSize: 78900,
-      cycleEnd: Date.now() + 600000,
-      round: 1,
-      description: 'Based and Mon-pilled.',
-      maxSupply: 800000000,
-      initialPrice: 0.000067,
-      initialLiquidity: 30000,
-    },
-  ];
+  import rawCoins from '$lib/mockCoins.json';
+
+  const ALL_COINS = rawCoins.map((c) => ({
+    ...c,
+    cycleEnd: Date.now() + c.cycleEndOffset,
+    cycleEndOffset: undefined,
+  }));
+
+  const ITEMS_PER_PAGE = 10;
+  let displayedCount = $state(ITEMS_PER_PAGE);
+  let loading = $state(false);
+
+  const paginatedCoins = $derived(ALL_COINS.slice(0, displayedCount));
+  const hasMore = $derived(displayedCount < ALL_COINS.length);
+
+  function loadMore() {
+    loading = true;
+    const next = displayedCount + ITEMS_PER_PAGE;
+    displayedCount = Math.min(next, ALL_COINS.length);
+    loading = false;
+  }
 </script>
 
 <svelte:window onclick={handleWindowClick} />
 
 <div class="page">
   <div class="stats-bar">
-    <div class="stat" onclick={(e) => { e.stopPropagation(); toggleTooltip('pool', e); }}>
+    <div class="stat pool-chart" onclick={(e) => { e.stopPropagation(); toggleTooltip('pool', e); }}>
       <span class="stat-value">$2.4M</span>
       <span class="stat-label">Total Pool</span>
+      <svg class="stat-bg-chart" viewBox="0 0 100 40" preserveAspectRatio="none">
+        <path d="M0 28 C10 30 12 18 20 16 S30 22 36 12 S46 8 50 6 S58 16 66 10 S74 14 80 4 S88 12 100 2" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="1" />
+        <path d="M50 4 C58 6 60 14 66 16 S74 24 78 26 S84 32 88 34 S94 38 100 38" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="1" />
+      </svg>
       {#if activeTooltip === 'pool'}
         <div class="tooltip" style="top: {tooltipY}px" onclick={(e) => e.stopPropagation()}>{STAT_TOOLTIPS.pool.desc}</div>
       {/if}
@@ -205,15 +124,23 @@
   <div class="page-header">
     <div>
       <p class="subtitle">Rugs, pumps, holds, dumps — all scheduled.</p>
-      <h1>Buy and pray. <span class="emoji-white">🧎</span></h1>
+      <h1>Buy and pray. <span class="emoji-white">📿</span></h1>
     </div>
   </div>
 
   <div class="coin-grid">
-    {#each MOCK_COINS as coin (coin.id)}
+    {#each paginatedCoins as coin (coin.id)}
       <CoinCard {coin} />
     {/each}
   </div>
+
+  {#if hasMore}
+    <div class="load-more-wrapper">
+      <button class="load-more-btn" onclick={loadMore} disabled={loading}>
+        {loading ? 'Loading...' : `Load More (${ALL_COINS.length - displayedCount} left)`}
+      </button>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -305,6 +232,16 @@
     opacity: 0.6;
   }
 
+  .stat-bg-chart {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.35;
+    border-radius: 10px;
+  }
+
   .tooltip {
     position: fixed;
     left: 50%;
@@ -346,5 +283,34 @@
     .coin-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  .load-more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .load-more-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--gray-700);
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .load-more-btn:hover:not(:disabled) {
+    border-color: #2563eb;
+    background: #1e3a5f;
+  }
+
+  .load-more-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
   }
 </style>
