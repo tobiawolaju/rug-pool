@@ -6,40 +6,30 @@
   import HolderList from '$components/coin/HolderList.svelte';
   import CountdownTimer from '$components/shared/CountdownTimer.svelte';
   import Badge from '$components/shared/Badge.svelte';
+  import rawCoins from '$lib/mockCoins.json';
 
   let { id }: { id: string } = $props();
 
-  const MOCK_COIN = {
-    id: 'monad-pepe',
-    name: 'Monad Pepe',
-    symbol: 'MPEPE',
-    price: 0.000042,
-    priceChange24h: 12.5,
-    marketCap: 425000,
-    poolSize: 128500,
-    holders: 342,
-    cycleEnd: Date.now() + 3600000 * 3 + 1200000,
-    round: 2,
-    round: 2,
-    totalRounds: 5,
-    flipsPending: 87,
-    isFoundingMember: true,
-    balance: 15.432,
-    image: 'https://placehold.co/48/7c3aed/ffffff?text=P',
-    description: 'The dankest pepe on Monad. Absolute unit.',
-    maxSupply: 1000000000,
-    initialPrice: 0.000042,
-    initialLiquidity: 50000,
-    twitter: 'https://x.com/monadpepe',
-    website: 'https://monadpepe.mon',
-  };
+  const raw = rawCoins.find((c: any) => c.id === id);
 
-  const MOCK_PRICES = Array.from({ length: 50 }, (_, i) => ({
+  const coin = raw
+    ? {
+        ...raw,
+        marketCap: raw.price * raw.maxSupply,
+        cycleEnd: Date.now() + raw.cycleEndOffset,
+        cycleEndOffset: undefined,
+        totalRounds: 5,
+        flipsPending: Math.floor(raw.holders * 0.25),
+        balance: +(raw.price * (raw.holders * 0.1)).toFixed(3),
+      }
+    : null;
+
+  const prices = Array.from({ length: 50 }, (_, i) => ({
     time: Date.now() - (50 - i) * 1800000,
-    price: 0.000035 + Math.random() * 0.00002,
+    price: coin ? coin.price * (0.85 + Math.random() * 0.3) : 0.000035 + Math.random() * 0.00002,
   }));
 
-  const MOCK_HOLDERS = [
+  const holders = [
     { address: '0x742d35Cc6634C0532925a3b844Bc9e7595f3bDc9', amount: 12500, value: 52500 },
     { address: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063', amount: 8400, value: 35280 },
     { address: '0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec', amount: 6200, value: 26040 },
@@ -48,33 +38,34 @@
     { address: '0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B', amount: 1900, value: 7980 },
   ];
 
-  let priceStr = $derived('$' + MOCK_COIN.price.toFixed(6));
-  let changeClass = $derived(MOCK_COIN.priceChange24h >= 0 ? 'positive' : 'negative');
-  let changeStr = $derived((MOCK_COIN.priceChange24h >= 0 ? '+' : '') + MOCK_COIN.priceChange24h.toFixed(2) + '%');
-  let poolStr = $derived('$' + MOCK_COIN.poolSize.toLocaleString());
-  let mcapStr = $derived('$' + MOCK_COIN.marketCap.toLocaleString());
-  let supplyStr = $derived(MOCK_COIN.maxSupply ? MOCK_COIN.maxSupply.toLocaleString() : '—');
+  let priceStr = $derived(coin ? '$' + coin.price.toFixed(6) : '—');
+  let changeClass = $derived(coin ? (coin.priceChange24h >= 0 ? 'positive' : 'negative') : '');
+  let changeStr = $derived(coin ? (coin.priceChange24h >= 0 ? '+' : '') + coin.priceChange24h.toFixed(2) + '%' : '');
+  let poolStr = $derived(coin ? '$' + coin.poolSize.toLocaleString() : '—');
+  let mcapStr = $derived(coin ? '$' + coin.marketCap.toLocaleString() : '—');
+  let supplyStr = $derived(coin && coin.maxSupply ? coin.maxSupply.toLocaleString() : '—');
 </script>
 
+{#if coin}
 <div class="detail-page">
   <div class="coin-hero">
     <div class="hero-left">
       <div class="coin-id">
-        {#if MOCK_COIN.image}
-          <img src={MOCK_COIN.image} alt={MOCK_COIN.name} class="coin-icon" />
+        {#if coin.image}
+          <img src={coin.image} alt={coin.name} class="coin-icon" />
         {:else}
-          <div class="icon-placeholder">{MOCK_COIN.symbol[0]}</div>
+          <div class="icon-placeholder">{coin.symbol[0]}</div>
         {/if}
         <div>
           <div class="coin-title">
-            {MOCK_COIN.name}
-            {#if MOCK_COIN.isFoundingProject}
+            {coin.name}
+            {#if coin.isFoundingProject}
               <Badge variant="project" />
-            {:else if MOCK_COIN.isFoundingMember}
+            {:else if coin.isFoundingMember}
               <Badge />
             {/if}
           </div>
-          <span class="coin-symbol">{MOCK_COIN.symbol}</span>
+          <span class="coin-symbol">{coin.symbol}</span>
         </div>
       </div>
     </div>
@@ -86,40 +77,40 @@
 
   <div class="main-grid">
     <div class="left-col">
-      {#if MOCK_COIN.description}
+      {#if coin.description}
         <div class="desc-card">
-          <p class="desc-text">{MOCK_COIN.description}</p>
+          <p class="desc-text">{coin.description}</p>
           <div class="social-links">
-            {#if MOCK_COIN.twitter}
-              <a href={MOCK_COIN.twitter} target="_blank" rel="noopener noreferrer" class="social-link">X</a>
+            {#if coin.twitter}
+              <a href={coin.twitter} target="_blank" rel="noopener noreferrer" class="social-link">X</a>
             {/if}
-            {#if MOCK_COIN.telegram}
-              <a href={MOCK_COIN.telegram} target="_blank" rel="noopener noreferrer" class="social-link">Telegram</a>
+            {#if coin.telegram}
+              <a href={coin.telegram} target="_blank" rel="noopener noreferrer" class="social-link">Telegram</a>
             {/if}
-            {#if MOCK_COIN.website}
-              <a href={MOCK_COIN.website} target="_blank" rel="noopener noreferrer" class="social-link">Website</a>
+            {#if coin.website}
+              <a href={coin.website} target="_blank" rel="noopener noreferrer" class="social-link">Website</a>
             {/if}
           </div>
         </div>
       {/if}
       <div class="chart-section">
-        <PriceChart data={MOCK_PRICES} pair="{MOCK_COIN.symbol}/MON" />
+        <PriceChart data={prices} pair="{coin.symbol}/MON" />
       </div>
       <div class="tracker-section">
         <CycleTracker
-          round={MOCK_COIN.round}
-          cycleEnd={MOCK_COIN.cycleEnd}
-          totalRounds={MOCK_COIN.totalRounds}
-          flipsPending={MOCK_COIN.flipsPending}
+          round={coin.round}
+          cycleEnd={coin.cycleEnd}
+          totalRounds={coin.totalRounds}
+          flipsPending={coin.flipsPending}
         />
       </div>
       <div class="tweet-actions">
-        <a href="https://x.com/search?q=%24{MOCK_COIN.symbol}" target="_blank" rel="noopener noreferrer" class="tweet-btn secondary">Pump ${MOCK_COIN.symbol} on 𝕏</a>
-        <a href="https://x.com/intent/tweet?text=just+bought+%24{MOCK_COIN.symbol}+on+%40rugpool%2C+locked+for+24hrs%2C+pray+for+me+%F0%9F%92%80+rug-pool.vercel.app" target="_blank" rel="noopener noreferrer" class="tweet-btn primary">Shill ${MOCK_COIN.symbol} 𝕏</a>
+        <a href="https://x.com/search?q=%24{coin.symbol}" target="_blank" rel="noopener noreferrer" class="tweet-btn secondary">Pump ${coin.symbol} on 𝕏</a>
+        <a href="https://x.com/intent/tweet?text=just+bought+%24{coin.symbol}+on+%40rugpool%2C+locked+for+24hrs%2C+pray+for+me+%F0%9F%92%80+rug-pool.vercel.app" target="_blank" rel="noopener noreferrer" class="tweet-btn primary">Shill ${coin.symbol} 𝕏</a>
       </div>
     </div>
     <div class="right-col">
-      <BuyPanel coinId={MOCK_COIN.symbol} balance={MOCK_COIN.balance} />
+      <BuyPanel coinId={coin.symbol} balance={coin.balance} />
       <div class="stats-card">
         <div class="stat-row">
           <span class="label">Market Cap</span>
@@ -135,13 +126,22 @@
         </div>
         <div class="stat-row">
           <span class="label">Next Flip</span>
-          <CountdownTimer target={MOCK_COIN.cycleEnd} pulse={true} />
+          <CountdownTimer target={coin.cycleEnd} pulse={true} />
         </div>
       </div>
-      <HolderList holders={MOCK_HOLDERS} />
+      <HolderList holders={holders} />
     </div>
   </div>
 </div>
+{:else}
+<div class="detail-page">
+  <div class="not-found">
+    <h2>Coin not found</h2>
+    <p>No coin with id "{id}" exists.</p>
+    <button class="back-btn" onclick={() => navigate('/')}>Back to feed</button>
+  </div>
+</div>
+{/if}
 
 <style>
   .detail-page {

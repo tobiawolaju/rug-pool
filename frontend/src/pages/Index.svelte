@@ -77,7 +77,6 @@
       <span class="stat-label">Total Pool</span>
       <svg class="stat-bg-chart" viewBox="0 0 100 40" preserveAspectRatio="none">
         <path d="M0 28 C10 30 12 18 20 16 S30 22 36 12 S46 8 50 6 S58 16 66 10 S74 14 80 4 S88 12 100 2" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="1" />
-        <path d="M50 4 C58 6 60 14 66 16 S74 24 78 26 S84 32 88 34 S94 38 100 38" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="1" />
       </svg>
       {#if activeTooltip === 'pool'}
         <div class="tooltip" style="top: {tooltipY}px" onclick={(e) => e.stopPropagation()}>{STAT_TOOLTIPS.pool.desc}</div>
@@ -123,8 +122,8 @@
 
   <div class="page-header">
     <div>
-      <p class="subtitle">Rugs, pumps, holds, dumps — all scheduled.</p>
-      <h1>Buy and pray. <span class="emoji-white">📿</span></h1>
+      <p class="subtitle">Buy, shill, pray, holds, dumps — all inevitable.</p>
+      <h1>memes on monad</h1>
     </div>
   </div>
 

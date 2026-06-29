@@ -109,4 +109,26 @@ contract VRFConsumer is Ownable {
         entropy = _entropy;
         entropyProvider = _entropyProvider;
     }
+
+    // TESTNET ONLY — allows owner to manually fulfill VRF for testing
+    function manualFulfill(
+        uint64 sequenceNumber,
+        bytes32 manualSeed
+    ) external onlyOwner {
+        RandomRequest storage req = requests[sequenceNumber];
+        require(req.sequenceNumber == sequenceNumber, "Request not found");
+        require(!req.fulfilled, "Already fulfilled");
+
+        req.result = manualSeed;
+        req.fulfilled = true;
+        cycleSeeds[req.coinAddress][req.cycleNumber] = manualSeed;
+
+        IRugPool(rugPool).onRandomnessFulfilled(
+            req.coinAddress,
+            req.cycleNumber,
+            manualSeed
+        );
+
+        emit RandomnessFulfilled(req.coinAddress, req.cycleNumber, manualSeed);
+    }
 }

@@ -6,7 +6,7 @@ import "./MemberRegistry.sol";
 import "./RugToken.sol";
 
 interface IRugPool {
-    function registerCoin(address tokenAddress, uint8 flipConfig) external;
+    function registerCoin(address tokenAddress, address creator, uint8 flipConfig, uint256 initialPoolValue) external;
 }
 
 contract CoinFactory is Ownable {
@@ -86,7 +86,9 @@ contract CoinFactory is Ownable {
         creatorCoins[msg.sender].push(tokenAddress);
 
         if (rugPool != address(0)) {
-            IRugPool(rugPool).registerCoin(tokenAddress, flipConfig);
+            uint256 initialPoolValue = (initialPrice * maxSupply) / 1e18;
+            IRugPool(rugPool).registerCoin(tokenAddress, msg.sender, flipConfig, initialPoolValue);
+            RugToken(tokenAddress).transfer(rugPool, maxSupply);
         }
 
         emit CoinLaunched(

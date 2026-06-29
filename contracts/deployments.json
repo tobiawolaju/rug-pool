@@ -1,0 +1,11 @@
+{
+  "network": "monad_testnet",
+  "deployedAt": "2026-06-29T07:26:13.746Z",
+  "contracts": {
+    "MemberRegistry": "0x079c4457ced137841e90bd13cfa059a904380aa2",
+    "Treasury": "0xeb1ad588ccadca76564e2e387f71e48ec13244bd",
+    "VRFConsumer": "0x260e327edb884cbf25781ea6b5f41535ec1e2d06",
+    "CoinFactory": "0x11feec514473b7eb08a3f8ad08f6a0589cdbab6b",
+    "RugPool": "0x4fae7fe950beed86deb347ec49b5928c3f4efd24"
+  }
+}

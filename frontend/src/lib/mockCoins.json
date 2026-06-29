@@ -9,7 +9,7 @@
     "poolSize": 128500,
     "cycleEndOffset": 12000000,
     "round": 2,
-    "image": "https://placehold.co/40/7c3aed/ffffff?text=P",
+    "image": "https://pbs.twimg.com/profile_images/2008493644735508480/AAyO53pg_400x400.jpg",
     "description": "The dankest pepe on Monad. Absolute unit.",
     "maxSupply": 1000000000,
     "initialPrice": 0.000042,
@@ -27,6 +27,7 @@
     "poolSize": 94200,
     "cycleEndOffset": 79800000,
     "round": 1,
+    "image": "https://pbs.twimg.com/profile_images/2058057480849035266/TcX2yS--_400x400.jpg",
     "description": "Much wow. Very rug. Such doge.",
     "maxSupply": 500000000,
     "initialPrice": 0.000128,
@@ -38,6 +39,7 @@
     "id": "monad-cat",
     "name": "Monad Cat",
     "symbol": "MCAT",
+    "image": "https://pbs.twimg.com/profile_images/2069881997455953921/tY8R4nII_400x400.jpg",
     "price": 0.000005,
     "priceChange24h": 45.2,
     "holders": 521,
@@ -55,6 +57,7 @@
     "id": "pog-coin",
     "name": "Pog Coin",
     "symbol": "POG",
+    "image": "https://pbs.twimg.com/profile_images/1977344254214037505/8n6ShV28_400x400.jpg",
     "price": 0.000009,
     "priceChange24h": -2.1,
     "holders": 76,
@@ -73,6 +76,7 @@
     "id": "wagmi-token",
     "name": "WAGMI Token",
     "symbol": "WAGMI",
+    "image": "https://pbs.twimg.com/profile_images/2043473396508536832/kf5rbS1O_400x400.jpg",
     "price": 0.000321,
     "priceChange24h": 3.7,
     "holders": 1054,
@@ -92,6 +96,7 @@
     "id": "based-mon",
     "name": "Based Mon",
     "symbol": "BMON",
+    "image": "https://pbs.twimg.com/media/HL-hWAJbMAAcyAo?format=jpg&name=small",
     "price": 0.000067,
     "priceChange24h": -15.8,
     "holders": 215,
@@ -107,6 +112,7 @@
     "id": "squid-games",
     "name": "Squid Games",
     "symbol": "SQUID",
+    "image": "https://pbs.twimg.com/profile_images/1861739634428174336/26FzLLyr_400x400.jpg",
     "price": 0.000015,
     "priceChange24h": 67.3,
     "holders": 684,
@@ -135,7 +141,8 @@
     "maxSupply": 42000000000,
     "initialPrice": 0.000003,
     "initialLiquidity": 8000,
-    "twitter": "https://x.com/pepechain"
+    "twitter": "https://x.com/pepechain",
+    "image": "https://pbs.twimg.com/profile_images/2008493644735508480/AAyO53pg_400x400.jpg"
   },
   {
     "id": "moon-mon",
@@ -151,7 +158,8 @@
     "maxSupply": 100000000,
     "initialPrice": 0.000514,
     "initialLiquidity": 60000,
-    "website": "https://moonmon.xyz"
+    "website": "https://moonmon.xyz",
+    "image": "https://pbs.twimg.com/profile_images/2058057480849035266/TcX2yS--_400x400.jpg"
   },
   {
     "id": "gas-fee",
@@ -168,7 +176,8 @@
     "maxSupply": 1000000000,
     "initialPrice": 0.000089,
     "initialLiquidity": 35000,
-    "telegram": "https://t.me/gasmonad"
+    "telegram": "https://t.me/gasmonad",
+    "image": "https://pbs.twimg.com/profile_images/2069881997455953921/tY8R4nII_400x400.jpg"
   },
   {
     "id": "hodl-bot",
@@ -184,7 +193,8 @@
     "maxSupply": 5000000000,
     "initialPrice": 0.000045,
     "initialLiquidity": 12000,
-    "twitter": "https://x.com/hodlbot"
+    "twitter": "https://x.com/hodlbot",
+    "image": "https://pbs.twimg.com/profile_images/1977344254214037505/8n6ShV28_400x400.jpg"
   },
   {
     "id": "degen-milk",
@@ -202,7 +212,8 @@
     "initialPrice": 0.000002,
     "initialLiquidity": 5000,
     "twitter": "https://x.com/degenmilk",
-    "telegram": "https://t.me/degenmilk"
+    "telegram": "https://t.me/degenmilk",
+    "image": "https://pbs.twimg.com/profile_images/2043473396508536832/kf5rbS1O_400x400.jpg"
   },
   {
     "id": "based-pepe",
@@ -218,7 +229,8 @@
     "maxSupply": 2000000000,
     "initialPrice": 0.000031,
     "initialLiquidity": 22000,
-    "twitter": "https://x.com/basedpepe"
+    "twitter": "https://x.com/basedpepe",
+    "image": "https://pbs.twimg.com/media/HL-hWAJbMAAcyAo?format=jpg&name=small"
   },
   {
     "id": "rug-surgeon",
@@ -235,7 +247,8 @@
     "maxSupply": 250000000,
     "initialPrice": 0.000175,
     "initialLiquidity": 40000,
-    "twitter": "https://x.com/rugsurgeon"
+    "twitter": "https://x.com/rugsurgeon",
+    "image": "https://pbs.twimg.com/profile_images/1861739634428174336/26FzLLyr_400x400.jpg"
   },
   {
     "id": "monad-wojak",
@@ -251,13 +264,14 @@
     "maxSupply": 9999999999,
     "initialPrice": 0.000008,
     "initialLiquidity": 18000,
-    "telegram": "https://t.me/monadwojak"
+    "telegram": "https://t.me/monadwojak",
+    "image": "https://pbs.twimg.com/profile_images/2008493644735508480/AAyO53pg_400x400.jpg"
   },
   {
     "id": "chad-coin",
     "name": "Chad Coin",
     "symbol": "CHAD",
-    "price": 0.000940,
+    "price": 0.00094,
     "priceChange24h": 2.4,
     "holders": 78,
     "poolSize": 33600,
@@ -265,15 +279,16 @@
     "round": 1,
     "description": "Only chads can buy. If you have to ask, you're not one.",
     "maxSupply": 100000000,
-    "initialPrice": 0.000940,
+    "initialPrice": 0.00094,
     "initialLiquidity": 75000,
-    "website": "https://chadcoin.mon"
+    "website": "https://chadcoin.mon",
+    "image": "https://pbs.twimg.com/profile_images/2058057480849035266/TcX2yS--_400x400.jpg"
   },
   {
     "id": "poor-coin",
     "name": "Poor Coin",
     "symbol": "POOR",
-    "price": 0.0000001,
+    "price": 1e-7,
     "priceChange24h": 999.9,
     "holders": 4567,
     "poolSize": 1420000,
@@ -282,16 +297,17 @@
     "isFoundingMember": true,
     "description": "So cheap you'd be poor not to buy.",
     "maxSupply": 1000000000000,
-    "initialPrice": 0.0000001,
+    "initialPrice": 1e-7,
     "initialLiquidity": 1000,
     "twitter": "https://x.com/poorcoin",
-    "telegram": "https://t.me/poorcoin"
+    "telegram": "https://t.me/poorcoin",
+    "image": "https://pbs.twimg.com/profile_images/2069881997455953921/tY8R4nII_400x400.jpg"
   },
   {
     "id": "wagmi-doge",
     "name": "WAGMI Doge",
     "symbol": "WDOGE",
-    "price": 0.000210,
+    "price": 0.00021,
     "priceChange24h": -12.8,
     "holders": 256,
     "poolSize": 110500,
@@ -299,11 +315,12 @@
     "round": 2,
     "description": "WAGMI + Doge = ultimate meme fusion.",
     "maxSupply": 750000000,
-    "initialPrice": 0.000210,
+    "initialPrice": 0.00021,
     "initialLiquidity": 55000,
     "twitter": "https://x.com/wagmidoge",
     "telegram": "https://t.me/wagmidoge",
-    "website": "https://wagmidoge.xyz"
+    "website": "https://wagmidoge.xyz",
+    "image": "https://pbs.twimg.com/profile_images/1977344254214037505/8n6ShV28_400x400.jpg"
   },
   {
     "id": "monad-frog",
@@ -319,13 +336,14 @@
     "maxSupply": 5000000000,
     "initialPrice": 0.000034,
     "initialLiquidity": 28000,
-    "twitter": "https://x.com/monadfrog"
+    "twitter": "https://x.com/monadfrog",
+    "image": "https://pbs.twimg.com/profile_images/2043473396508536832/kf5rbS1O_400x400.jpg"
   },
   {
     "id": "ape-together",
     "name": "Ape Together",
     "symbol": "APETHR",
-    "price": 0.000450,
+    "price": 0.00045,
     "priceChange24h": 34.5,
     "holders": 876,
     "poolSize": 425000,
@@ -334,9 +352,10 @@
     "isFoundingMember": true,
     "description": "Apes together strong. Apes together rugged.",
     "maxSupply": 100000000,
-    "initialPrice": 0.000450,
+    "initialPrice": 0.00045,
     "initialLiquidity": 90000,
-    "telegram": "https://t.me/apetogether"
+    "telegram": "https://t.me/apetogether",
+    "image": "https://pbs.twimg.com/media/HL-hWAJbMAAcyAo?format=jpg&name=small"
   },
   {
     "id": "silly-dragon",
@@ -352,13 +371,14 @@
     "maxSupply": 8000000000,
     "initialPrice": 0.000007,
     "initialLiquidity": 12000,
-    "twitter": "https://x.com/sillydragon"
+    "twitter": "https://x.com/sillydragon",
+    "image": "https://pbs.twimg.com/profile_images/1861739634428174336/26FzLLyr_400x400.jpg"
   },
   {
     "id": "no-buy",
     "name": "No Buy",
     "symbol": "NOBUY",
-    "price": 0.0000005,
+    "price": 5e-7,
     "priceChange24h": -45.6,
     "holders": 23,
     "poolSize": 4500,
@@ -366,9 +386,10 @@
     "round": 1,
     "description": "Do not buy this coin. Seriously. No buy.",
     "maxSupply": 99999999999,
-    "initialPrice": 0.0000005,
+    "initialPrice": 5e-7,
     "initialLiquidity": 500,
-    "telegram": "https://t.me/nobuytoken"
+    "telegram": "https://t.me/nobuytoken",
+    "image": "https://pbs.twimg.com/profile_images/2008493644735508480/AAyO53pg_400x400.jpg"
   },
   {
     "id": "safe-moon",
@@ -385,13 +406,14 @@
     "maxSupply": 1000000000,
     "initialPrice": 0.000056,
     "initialLiquidity": 200000,
-    "twitter": "https://x.com/safemoon"
+    "twitter": "https://x.com/safemoon",
+    "image": "https://pbs.twimg.com/profile_images/2058057480849035266/TcX2yS--_400x400.jpg"
   },
   {
     "id": "elons-dog",
     "name": "Elon's Dog",
     "symbol": "EDOG",
-    "price": 0.000910,
+    "price": 0.00091,
     "priceChange24h": 72.4,
     "holders": 5431,
     "poolSize": 2100000,
@@ -400,10 +422,11 @@
     "isFoundingMember": true,
     "description": "Elon tweeted about this dog. Trust me bro.",
     "maxSupply": 420000000,
-    "initialPrice": 0.000910,
+    "initialPrice": 0.00091,
     "initialLiquidity": 500000,
     "twitter": "https://x.com/elonsdog",
-    "website": "https://elonsdog.xyz"
+    "website": "https://elonsdog.xyz",
+    "image": "https://pbs.twimg.com/profile_images/2069881997455953921/tY8R4nII_400x400.jpg"
   },
   {
     "id": "diamond-hands",
@@ -419,14 +442,15 @@
     "maxSupply": 500000000,
     "initialPrice": 0.000148,
     "initialLiquidity": 85000,
-    "telegram": "https://t.me/diamondhands"
+    "telegram": "https://t.me/diamondhands",
+    "image": "https://pbs.twimg.com/profile_images/1977344254214037505/8n6ShV28_400x400.jpg"
   },
   {
     "id": "wen-lambo",
     "name": "Wen Lambo",
     "symbol": "LAMBO",
-    "price": 0.000740,
-    "priceChange24h": 150.0,
+    "price": 0.00074,
+    "priceChange24h": 150,
     "holders": 2341,
     "poolSize": 980000,
     "cycleEndOffset": 13200000,
@@ -434,16 +458,17 @@
     "isFoundingMember": true,
     "description": "Wen lambo? Now lambo? No lambo? Rug.",
     "maxSupply": 100000000,
-    "initialPrice": 0.000740,
+    "initialPrice": 0.00074,
     "initialLiquidity": 250000,
     "twitter": "https://x.com/wenlambo",
-    "telegram": "https://t.me/wenlambo"
+    "telegram": "https://t.me/wenlambo",
+    "image": "https://pbs.twimg.com/profile_images/2043473396508536832/kf5rbS1O_400x400.jpg"
   },
   {
     "id": "punk-404",
     "name": "Punk 404",
     "symbol": "P404",
-    "price": 0.000260,
+    "price": 0.00026,
     "priceChange24h": -5.5,
     "holders": 167,
     "poolSize": 58900,
@@ -451,9 +476,10 @@
     "round": 2,
     "description": "Punk not found. But the rug is here.",
     "maxSupply": 10000000,
-    "initialPrice": 0.000260,
+    "initialPrice": 0.00026,
     "initialLiquidity": 42000,
-    "website": "https://punk404.io"
+    "website": "https://punk404.io",
+    "image": "https://pbs.twimg.com/media/HL-hWAJbMAAcyAo?format=jpg&name=small"
   },
   {
     "id": "monad-milk",
@@ -469,7 +495,8 @@
     "maxSupply": 10000000000,
     "initialPrice": 0.000012,
     "initialLiquidity": 15000,
-    "telegram": "https://t.me/monadmilk"
+    "telegram": "https://t.me/monadmilk",
+    "image": "https://pbs.twimg.com/profile_images/1861739634428174336/26FzLLyr_400x400.jpg"
   },
   {
     "id": "rug-puller",
@@ -487,23 +514,25 @@
     "initialPrice": 0.000003,
     "initialLiquidity": 2000,
     "twitter": "https://x.com/rugpuller",
-    "telegram": "https://t.me/rugpuller"
+    "telegram": "https://t.me/rugpuller",
+    "image": "https://pbs.twimg.com/profile_images/2008493644735508480/AAyO53pg_400x400.jpg"
   },
   {
     "id": "zero-intelligence",
     "name": "Zero Intelligence",
     "symbol": "ZEROIQ",
-    "price": 0.00000001,
-    "priceChange24h": 0.0,
+    "price": 1e-8,
+    "priceChange24h": 0,
     "holders": 42,
     "poolSize": 8900,
     "cycleEndOffset": 12000000,
     "round": 1,
     "description": "For people with zero intelligence. Feels like home?",
     "maxSupply": 100000000000,
-    "initialPrice": 0.00000001,
+    "initialPrice": 1e-8,
     "initialLiquidity": 100,
-    "twitter": "https://x.com/zeroiqcoin"
+    "twitter": "https://x.com/zeroiqcoin",
+    "image": "https://pbs.twimg.com/profile_images/2058057480849035266/TcX2yS--_400x400.jpg"
   },
   {
     "id": "yolo-swaggins",
@@ -519,13 +548,14 @@
     "maxSupply": 3000000000,
     "initialPrice": 0.000081,
     "initialLiquidity": 48000,
-    "telegram": "https://t.me/yaloswaggins"
+    "telegram": "https://t.me/yaloswaggins",
+    "image": "https://pbs.twimg.com/profile_images/2069881997455953921/tY8R4nII_400x400.jpg"
   },
   {
     "id": "fomo-coin",
     "name": "FOMO Coin",
     "symbol": "FOMO",
-    "price": 0.000430,
+    "price": 0.00043,
     "priceChange24h": 89.3,
     "holders": 3120,
     "poolSize": 1450000,
@@ -534,9 +564,10 @@
     "isFoundingMember": true,
     "description": "Fear of missing out? You already missed out.",
     "maxSupply": 500000000,
-    "initialPrice": 0.000430,
+    "initialPrice": 0.00043,
     "initialLiquidity": 180000,
-    "twitter": "https://x.com/fomocoin"
+    "twitter": "https://x.com/fomocoin",
+    "image": "https://pbs.twimg.com/profile_images/1977344254214037505/8n6ShV28_400x400.jpg"
   },
   {
     "id": "jeet-b-gone",
@@ -553,13 +584,14 @@
     "maxSupply": 1000000000,
     "initialPrice": 0.000095,
     "initialLiquidity": 22000,
-    "telegram": "https://t.me/jeetbgone"
+    "telegram": "https://t.me/jeetbgone",
+    "image": "https://pbs.twimg.com/profile_images/2043473396508536832/kf5rbS1O_400x400.jpg"
   },
   {
     "id": "vibes-only",
     "name": "Vibes Only",
     "symbol": "VIBES",
-    "price": 0.000180,
+    "price": 0.00018,
     "priceChange24h": 6.5,
     "holders": 890,
     "poolSize": 376000,
@@ -567,9 +599,10 @@
     "round": 3,
     "description": "No roadmap. No utility. Just vibes.",
     "maxSupply": 2000000000,
-    "initialPrice": 0.000180,
+    "initialPrice": 0.00018,
     "initialLiquidity": 65000,
-    "twitter": "https://x.com/vibesonly"
+    "twitter": "https://x.com/vibesonly",
+    "image": "https://pbs.twimg.com/media/HL-hWAJbMAAcyAo?format=jpg&name=small"
   },
   {
     "id": "rekt-royale",
@@ -587,6 +620,7 @@
     "initialPrice": 0.000024,
     "initialLiquidity": 75000,
     "twitter": "https://x.com/rektroyale",
-    "telegram": "https://t.me/rektroyale"
+    "telegram": "https://t.me/rektroyale",
+    "image": "https://pbs.twimg.com/profile_images/1861739634428174336/26FzLLyr_400x400.jpg"
   }
 ]
